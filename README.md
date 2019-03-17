@@ -1,7 +1,13 @@
 # Ridiculously Reusable Components Workshop
 
-## Project setup
+## Requirements
+
+- [Node.js](https://nodejs.org/)
+
+## Getting Setup
+
 ```
+# Install dependencies
 yarn install
 ```
 
