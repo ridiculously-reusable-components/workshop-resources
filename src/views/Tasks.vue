@@ -11,7 +11,7 @@
       </router-link>
 
       <router-link :to="{ name: 'tasks', params: { task: currentTask + 1 } }">
-        <AppButton>Go to task {{ currentTask + 1 }}</AppButton>
+        <AppButton style="margin-left: 1rem;">Go to task {{ currentTask + 1 }}</AppButton>
       </router-link>
     </div>
   </div>
