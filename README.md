@@ -1,4 +1,11 @@
-# Ridiculously Reusable Components Workshop
+# Ridiculously Reusable Components - Workshop Resources
+
+The core directive for this repository is to provide workshop participants with all the resources they require for the workshop.
+
+## Authors
+
+- Damian Dulisz: [GitHub](https://www.github.com/shentao) / [Twitter](https://twitter.com/DamianDulisz)
+- Ben Hong: [GitHub](https://www.github.com/bencodezen) / [Twitter](https://twitter.com/bencodezen)
 
 ## Requirements
 
