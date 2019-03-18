@@ -7,36 +7,43 @@ The core directive for this repository is to provide workshop participants with 
 - Damian Dulisz: [GitHub](https://www.github.com/shentao) / [Twitter](https://twitter.com/DamianDulisz)
 - Ben Hong: [GitHub](https://www.github.com/bencodezen) / [Twitter](https://twitter.com/bencodezen)
 
-## Requirements
+## Setup
+
+### Requirement
 
 - [Node.js](https://nodejs.org/)
 
-## Getting Setup
+### Recommended
 
-```
+- [Git](https://git-scm.com/)
+
+### Optional
+
+- [yarn](https://yarnpkg.com/)
+
+## Instructions
+
+If you want to keep a copy of your work in your own repo, please make sure to fork the repository before cloning!
+
+```bash
+# Clone repo
+git clone {{ workshopResourcesRepo }}
+
+# Change directories to workshop resources
+cd workshop-resources
+
 # Install dependencies
-yarn install
-```
+npm install
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+# Run local web server with hot-module reloading
+npm run serve
 
-### Compiles and minifies for production
-```
-yarn run build
-```
+# Compile a production build
+npm run build
 
-### Run your tests
-```
-yarn run test
-```
+# Run tests
+npm run test
 
-### Lints and fixes files
+# Lint and fix files
+npm run lint
 ```
-yarn run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
