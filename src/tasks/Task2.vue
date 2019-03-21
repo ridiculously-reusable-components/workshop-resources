@@ -6,7 +6,7 @@
         Create a ConfirmationModal.vue that uses AppModal to that accepts a question and contains two buttons: "Confirm" and "Cancel"
       </li>
       <li>
-        Make the ConfirmationModal component emit a 'confirm' event when clicked on 'Cofirm' button. And a 'close' event when clicking on 'Cancel'.
+        Make the ConfirmationModal component emit a 'confirm' event when clicked on 'Confirm' button. And a 'close' event when clicking on 'Cancel'.
       </li>
       <li>
         Display the confirmation question before the button, similar to the example below.
@@ -40,12 +40,12 @@
       </div>
     </AppModal>
 
-    <!-- DESIRED USAGE -->
-    <ConfirmationModal
+    <!-- DESIRED USAGE. UNCOMMENT WHEN READY -->
+    <!-- <ConfirmationModal
       message="Have you finished the task?"
       @confirm="confirm"
       @close="isModalOpen = false"
-    />
+    /> -->
     <!-- TASK ENDS HERE -->
   </div>
 </template>
