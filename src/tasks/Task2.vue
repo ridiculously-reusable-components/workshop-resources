@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Task 2: ConfirmationModal</h1>
+    <h1>Task 2: Reusable Component Composition</h1>
     <ol class="steps">
       <li>
         Create a ConfirmationModal.vue that uses AppModal to that accepts a question and contains two buttons: "Confirm" and "Cancel"

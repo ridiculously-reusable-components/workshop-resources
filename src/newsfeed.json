@@ -1,0 +1,80 @@
+[
+  {
+    "date": "03/23/2019",
+    "type": "post",
+    "id": 0,
+    "title": "I will be at VueConf!",
+    "author": "Even You",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "date": "03/23/2019",
+    "type": "ad",
+    "id": 1,
+    "title": "VueConf 2019!",
+    "author": "VueConf",
+    "image": "https://via.placeholder.com/500x150.png?text=Come+to+VueConf!"
+  },
+  {
+    "date": "03/23/2019",
+    "type": "event",
+    "id": 2,
+    "title": "VueConf 25.03.2019",
+    "author": "VueConf",
+    "attendees": 500,
+    "location": "STRAZ ARTS CENTER, Tampa, USA",
+    "attending": true
+  },
+  {
+    "date": "03/23/2019",
+    "type": "post",
+    "id": 3,
+    "title": "I will be at VueConf!",
+    "author": "Even You",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "date": "03/23/2019",
+    "type": "ad",
+    "id": 4,
+    "title": "VueConf 2019!",
+    "author": "VueConf",
+    "image": "https://via.placeholder.com/500x150.png?text=Come+to+VueConf!"
+  },
+  {
+    "date": "03/23/2019",
+    "type": "event",
+    "id": 5,
+    "title": "VueConf 25.03.2019",
+    "author": "VueConf",
+    "attendees": 500,
+    "location": "STRAZ ARTS CENTER, Tampa, USA",
+    "attending": false
+  },
+  {
+    "date": "03/23/2019",
+    "type": "post",
+    "id": 6,
+    "title": "I will be at VueConf!",
+    "author": "Even You",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  },
+  {
+    "date": "03/23/2019",
+    "type": "ad",
+    "id": 7,
+    "title": "VueConf 2019!",
+    "author": "VueConf",
+    "image": "https://via.placeholder.com/500x150.png?text=Come+to+VueConf!"
+  },
+  {
+    "date": "03/23/2019",
+    "type": "event",
+    "id": 8,
+    "title": "VueConf 25.03.2019",
+    "author": "VueConf",
+    "attendees": 500,
+    "location": "STRAZ ARTS CENTER, Tampa, USA",
+    "attending": true
+  }
+]
