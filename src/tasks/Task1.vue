@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Task 1: AppSelect</h1>
+    <h1>Task 1: Composing Components</h1>
     <ol class="steps">
       <li>
         Compose AppSelect.vue that uses AppDropdown.vue. Let it accept an array of options and the selected value.
