@@ -3,57 +3,77 @@
     <h1>Task 3: "Composition Over Inheritance"</h1>
     <ol class="steps">
       <li>
-        Create a ConfirmationModal.vue that uses AppModal to that accepts a question and contains two buttons: "Confirm" and "Cancel"
+        Create the NewsEvent component that will handle the "event" type news from the newsFeed.
+      </li>
+      <li>
+        Similar to NewsAd and NewsPost, make use of the BaseNews component
       </li>
     </ol>
 
-    <!-- TASK BEGINS HERE -->
-    <div v-for="news of newsFeed" :key="news.id">
-      <div class="card">
-        <small>{{ news.author }}</small>
-        <h3 class="title">{{ news.title }}</h3>
-        <small>{{ news.date }}</small>
+    <div class="feeds">
+      <!-- TASK BEGINS HERE -->
+      <div class="feed">
+        <div v-for="news of newsFeed" :key="news.id">
+          <div class="card">
+            <template v-if="news.type === 'ad'">
+              <span class="sponsored">SPONSORED</span>
+              <small>{{ news.author }}</small>
+            </template>
+            <template v-else>
+              <small>{{ news.author }}</small>
+            </template>
 
-        <template v-if="news.type === 'post'">
-          <blockquote class="quote">
-            {{ news.content }}
-          </blockquote>
-        </template>
-        <template v-if="news.type === 'ad'">
-          <img class="banner" :src="news.image"/>
-        </template>
-        <template v-if="news.type === 'event'">
-          <div class="event">
-            <small>Location:</small>
-            <p>{{ news.location }}</p>
+            <h3 class="title">{{ news.title }}</h3>
+            <small>{{ news.date }}</small>
 
-            <small>Attendees:</small>
-            <p>{{ news.attendees }}</p>
+            <template v-if="news.type === 'post'">
+              <blockquote class="quote">
+                {{ news.content }}
+              </blockquote>
+            </template>
+            <template v-if="news.type === 'ad'">
+              <img class="banner" :src="news.image"/>
+            </template>
+            <template v-if="news.type === 'event'">
+              <div class="event">
+                <small>Location:</small>
+                <p>{{ news.location }}</p>
 
-            <AppButton :type="news.attending ? 'primary' : 'secondary'">
-              <AppIcon
-              :icon="news.attending ? 'check' : 'plus'"
-              class="mr-1"
-              />
-              {{ news.attending ? 'You’re attending' : 'Join!' }}
-            </AppButton>
+                <small>Attendees:</small>
+                <p>{{ news.attendees }}</p>
+
+                <AppButton :type="news.attending ? 'primary' : 'secondary'">
+                  <AppIcon
+                    :icon="news.attending ? 'check' : 'plus'"
+                    class="mr-1"
+                  />
+                  {{ news.attending ? 'You’re attending' : 'Join!' }}
+                </AppButton>
+              </div>
+            </template>
           </div>
-        </template>
+        </div>
       </div>
-    </div>
 
-    <!-- DESIRED USAGE -->
-    <ConfirmationModal
-      message="Have you finished the task?"
-      @confirm="confirm"
-      @close="isModalOpen = false"
-    />
-    <!-- TASK ENDS HERE -->
+      <!-- DESIRED USE PATTERN -->
+      <div class="feed">
+        <Component
+          v-for="news of newsFeed"
+          :key="news.id"
+          :is="getNewsTypeComponent(news.type)"
+          :news="news"
+        />
+      </div>
+
+      <!-- TASK ENDS HERE -->
+    </div>
   </div>
 </template>
 
 <script>
 import newsFeed from '@/newsfeed.json'
+import NewsPost from '@/components/NewsPost'
+import NewsAd from '@/components/NewsAd'
 
 export default {
   data () {
@@ -62,9 +82,21 @@ export default {
     }
   },
   methods: {
-    confirm () {
-      alert('Why would you do that?')
-      this.isModalOpen = false
+    getNewsTypeComponent (type) {
+      switch (type) {
+        case 'post':
+          return NewsPost
+        case 'ad':
+          return NewsAd
+        default:
+          return NewsPost
+      }
+    },
+    join () {
+      alert('joining the event!')
+    },
+    leave () {
+      alert('leaving the event!')
     }
   }
 }
@@ -81,6 +113,13 @@ export default {
 
   button
     margin-right: 1rem
+
+.feeds
+  display: flex
+  justify-content: center
+
+.feed
+  margin: 0 2rem
 
 .steps
   max-width: 30rem
@@ -99,12 +138,25 @@ export default {
   max-width: 100%
   margin: 0 auto 2rem
 
+.title
+  margin: 0
+
+.sponsored
+  font-size: 0.7em
+  font-weight: 900
+  letter-spacing: 1.5px
+  margin-right: 0.3rem
+  background: red
+  color: white
+  padding: 2px 7px
+  border-radius: 5px
+  display: inline-block
+  margin: 0 0.5rem 0.2rem 0
+  vertical-align: middle
+
 .quote
   margin: 10px 0
   font-style: italic
-
-.title
-  margin: 0
 
 .event
   p
