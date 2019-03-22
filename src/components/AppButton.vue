@@ -1,7 +1,7 @@
 <template>
   <button
-    type="button"
     class="button"
+    :type="buttonType"
     :class="type"
     v-on="$listeners"
   >
@@ -15,6 +15,10 @@ export default {
     type: {
       type: String,
       default: 'primary'
+    },
+    buttonType: {
+      type: String,
+      default: 'button'
     }
   }
 }
