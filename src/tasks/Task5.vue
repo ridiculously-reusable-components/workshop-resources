@@ -9,13 +9,13 @@
         Add a Country field to the schema that uses the newly created FormSelect and provide a few countries to select from.
       </li>
       <li>
-        <strong>Advanced</strong>: Create a component that allows to pick a date (<strong>without using input type="date"</strong>). It can be a composition/wrapper around an open-source datepicker like "<strong>vuejs-datepicker</strong>", or a combination of 3 regular select elements prefilled with days, months and years.
+        <strong>Advanced</strong>: Create a component that allows to pick a date (<strong>without using input type="date"</strong>). It can be a composition/wrapper around an open-source datepicker like "<strong>vuejs-datepicker</strong>", or a combination of 3 regular select elements filled with days, months and years.
       </li>
       <li>
         Add the component directly to the <strong>Schema</strong> rather than registering it inside <strong>SchemaForm.vue</strong>
       </li>
       <li>
-        <strong>Advanced</strong>: If the user checks the <strong>isVueFan</strong> checkbox, extend the schema with an additial text input that asks for feedback.
+        <strong>Advanced</strong>: If the user checks the <strong>isVueFan</strong> checkbox, extend the schema with an additional text input that asks for feedback.
       </li>
     </ol>
 
