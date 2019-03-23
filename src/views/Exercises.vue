@@ -16,8 +16,8 @@ export default {
   data () {
     return {
       exercises: [
-        'ChatBot',
-        'BuildButton'
+        'ButtonsLab',
+        'ChatBot'
       ]
     }
   },

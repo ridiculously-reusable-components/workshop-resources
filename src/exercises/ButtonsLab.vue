@@ -6,12 +6,10 @@ export default {
 
 <template>
   <article class="wrapper">
-    <button class="button is-large" type="button">
+    <button class="button is-info is-large" type="button">
       Button
     </button>
-    <PulseLoader color="#fff" size="12px"/>
   </article>
-
 </template>
 
 <style>
