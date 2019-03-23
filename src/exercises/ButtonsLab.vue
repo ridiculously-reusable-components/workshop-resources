@@ -6,21 +6,46 @@ export default {
 
 <template>
   <article class="wrapper">
-    <button class="button is-info is-large" type="button">
-      Button
+    <h1>Button Labs</h1>
+    <p>Is this the real</p>
+    <button class="button is-info is-medium" type="button">
+      Life
+    </button> 
+    <p>Is this just</p>
+    <button class="button is-info is-medium" type="button">
+      Fantasy
+    </button>
+    <p>Caught in a</p>
+    <button class="button is-info is-medium" type="button">
+      Landslide
+    </button>
+    <p>No escape from</p>
+    <button class="button is-info is-medium" type="button">
+      Reality
+    </button>
+    <p>Open your</p>
+    <button class="button is-info is-medium" type="button">
+      Eyes
+    </button>
+    <p>Look up to the skies and</p>
+    <button class="button is-info is-medium" type="button">
+      See
     </button>
   </article>
 </template>
 
 <style>
 .wrapper {
-  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Styles from Bulma.io */
 /* Base Styles */
 
 .button {
+    display: block;
     background-color: #fff;
     border-color: #dbdbdb;
     border-width: 1px;
