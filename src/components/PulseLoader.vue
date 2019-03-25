@@ -1,9 +1,3 @@
-<script>
-export default {
-
-}
-</script>
-
 <template>
   <div class="is-spinning">
     <AppIcon icon="spinner" size="lg" />
