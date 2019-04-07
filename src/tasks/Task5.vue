@@ -58,7 +58,14 @@ const SCHEMA = {
   isVueFan: {
     component: 'FormCheckbox',
     label: 'Are you a Vue fan?'
-  }
+  },
+  country: {
+    component: 'FormSelect',
+    label: 'Country',
+    config: {
+      options: ['Germany', 'Poland', 'France', 'Czech Republic', 'Iceland']
+    }
+  },
 }
 
 export default {

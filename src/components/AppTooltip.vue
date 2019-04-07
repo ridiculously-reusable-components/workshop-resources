@@ -1,6 +1,6 @@
 <template>
   <span class="tooltip">
-    <slot name="trigger" v-bind="{ setIsOpen, isOpen }">
+    <slot name="trigger" v-bind="{ isOpen, setIsOpen }">
       <span
         class="tooltip-trigger"
         @mouseenter="setIsOpen(true)"
@@ -10,7 +10,7 @@
       </span>
     </slot>
     <div v-if="isOpen" class="tooltip-content">
-      <slot name="content" v-bind="{ setIsOpen, isOpen }"/>
+      <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
     </div>
   </span>
 </template>

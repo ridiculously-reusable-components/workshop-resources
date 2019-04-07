@@ -1,6 +1,22 @@
 <template>
   <AppDropdown>
-    Your code here
+    <template>
+      <slot name="selected"/>
+      <AppIcon style="margin-left: 7px" icon="chevron-down"/>
+    </template>
+    <div slot="content" class="">
+      <ul>
+        <li
+          v-for="(option, index) of options"
+          :key="index"
+          @click="update(option)"
+        >
+          <slot name="option" :option="option">
+            {{ option.name }}
+          </slot>
+        </li>
+      </ul>
+    </div>
   </AppDropdown>
 </template>
 

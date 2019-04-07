@@ -1,16 +1,19 @@
 <template>
   <AppTooltip>
-    <template slot="trigger" slot-scope="{ setIsOpen, isOpen }">
+    <template
+      slot="trigger"
+      slot-scope="{ isOpen, setIsOpen }"
+    >
       <AppButton @click="setIsOpen(!isOpen)">
-        <slot />
+        <slot/>
       </AppButton>
       <GlobalEvents
         v-if="isOpen"
         @click="handleOutsideClick($event, setIsOpen)"
       />
     </template>
-    <div slot="content" slot-scope="{ setIsOpen, isOpen }">
-      <slot name="content" v-bind="{ setIsOpen, isOpen }" />
+    <div slot="content" slot-scope="{ isOpen, setIsOpen }">
+      <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
     </div>
   </AppTooltip>
 </template>

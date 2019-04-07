@@ -41,21 +41,24 @@
     </AppModal>
 
     <!-- DESIRED USAGE. UNCOMMENT WHEN READY -->
-    <!-- <ConfirmationModal
+    <ConfirmationModal
+      v-if="isModalOpen"
       message="Have you finished the task?"
       @confirm="confirm"
       @close="isModalOpen = false"
-    /> -->
+    />
     <!-- TASK ENDS HERE -->
   </div>
 </template>
 
 <script>
 import AppModal from '@/components/AppModal'
+import ConfirmationModal from '@/components/ConfirmationModal'
 
 export default {
   components: {
-    AppModal
+    AppModal,
+    ConfirmationModal
   },
   data () {
     return {

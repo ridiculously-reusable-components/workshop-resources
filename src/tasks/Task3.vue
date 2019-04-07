@@ -17,11 +17,8 @@
           <div class="card">
             <template v-if="news.type === 'ad'">
               <span class="sponsored">SPONSORED</span>
-              <small>{{ news.author }}</small>
             </template>
-            <template v-else>
-              <small>{{ news.author }}</small>
-            </template>
+            <small>{{ news.author }}</small>
 
             <h3 class="title">{{ news.title }}</h3>
             <small>{{ news.date }}</small>
@@ -56,14 +53,14 @@
       </div>
 
       <!-- DESIRED USE PATTERN -->
-      <div class="feed">
+      <!-- <div class="feed">
         <Component
           v-for="news of newsFeed"
           :key="news.id"
           :is="getNewsTypeComponent(news.type)"
           :news="news"
         />
-      </div>
+      </div> -->
 
       <!-- TASK ENDS HERE -->
     </div>
@@ -72,8 +69,9 @@
 
 <script>
 import newsFeed from '@/newsfeed.json'
-import NewsPost from '@/components/NewsPost'
-import NewsAd from '@/components/NewsAd'
+const NewsPost = () => import('@/components/NewsPost')
+const NewsAd = () => import('@/components/NewsAd')
+const NewsEvent = () => import('@/components/NewsEvent')
 
 export default {
   data () {
@@ -88,6 +86,8 @@ export default {
           return NewsPost
         case 'ad':
           return NewsAd
+        case 'event':
+          return NewsEvent
         default:
           return NewsPost
       }

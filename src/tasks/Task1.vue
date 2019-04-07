@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>Task 1: Composing Components</h1>
+
     <ol class="steps">
       <li>
         Compose AppSelect.vue that uses AppDropdown.vue. Let it accept an array of options and the selected value.
@@ -14,7 +15,7 @@
     </ol>
 
     <!-- TASK BEGINS HERE -->
-    <AppSelect v-model="value" :options="options">
+    <AppSelect :value="value" @input="value = $event" :options="options">
       <template #selected>
         {{ value.name || 'Select option' }}
         <AppIcon icon="chevron-down" style="margin-left: 10px;"/>
@@ -34,7 +35,7 @@
 </template>
 
 <script>
-import AppSelect from '@/components/AppSelect'
+import AppDropdown from '@/components/AppDropdown'
 
 export default {
   components: {
