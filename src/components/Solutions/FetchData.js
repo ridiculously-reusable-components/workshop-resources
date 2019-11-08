@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       data: null,
-      resolved: false,
+      isPending: true,
       error: null
     }
   },
@@ -28,23 +28,23 @@ export default {
   },
   methods: {
     fetch () {
-      this.resolved = false
+      this.isPending = true
       axios.get(this.url)
         .then(response => {
           this.error = null
           this.data = response.data
-          this.resolved = true
+          this.isPending = false
         })
         .catch(error => {
           this.error = error
-          this.resolved = true
+          this.isPending = false
         })
     }
   },
   render () {
-    if (!this.resolved) {
+    if (this.isPending) {
       return this.$scopedSlots.loading({
-        isPending: !this.resolved
+        isPending: this.isPending
       })
     }
     if (this.error) {

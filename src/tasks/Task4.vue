@@ -13,13 +13,14 @@
           Depending on the status: pending, error or resolved (data fetched), make it render different slots to match the use case below.
         </li>
         <li>
-          <WithMousePos>
-            <template v-slot="{ x, y }">
-              Mouse position is: {{ x }}, {{ y }}
-            </template>
-          </WithMousePos>
+          <strong>Advanced</strong>: Create a `useFetchData` composition function to replace the provider component.
         </li>
       </ol>
+      <WithMousePos>
+        <template v-slot="{ x, y }">
+          Mouse position is: {{ x }}, {{ y }}
+        </template>
+      </WithMousePos>
 
       <!-- TASK BEGINS HERE -->
       <input v-model="breed" class="input" type="text">
@@ -42,13 +43,31 @@
           </div>
         </template>
       </FetchData>
+      <!-- TASK ENDS HERE -->
+
+      <!-- ADVANCED TASK USAGE -->
+      <!-- <PulseLoader v-if="isPending"/>
+      <template v-if="error">
+        <div>
+          {{ error }}
+          <AppButton @click="refresh">Refresh!</AppButton>
+        </div>
+      </template>
+
+      <template v-if="!error && !isPending">
+        <div>
+          <img :src="data.message" class="result-image">
+          <AppButton @click="refresh">Refresh!</AppButton>
+        </div>
+      </template> -->
     </div>
-    <!-- TASK ENDS HERE -->
   </div>
 </template>
 
 <script>
+// import { ref, computed } from '@vue/composition-api'
 import FetchData from '@/components/FetchData'
+// import useFetchData from '@/composables/useFetchData'
 import PulseLoader from 'vue-spinner/src/PulseLoader'
 import WithMousePos from '@/components/MousePos'
 
