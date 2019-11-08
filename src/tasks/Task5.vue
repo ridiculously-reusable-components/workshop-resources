@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Task 5: Dynamically generated form</h1>
+    <h1 class="text-2xl font-bold mb-4">Task 5: Dynamically generated form</h1>
     <ol class="steps">
       <li>
         Create a FormSelect component that uses the AppSelect component or a regular select element that accepts an array of options.

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Task 1: Composing Components</h1>
+    <h1 class="text-2xl font-bold mb-4">Task 1: Composing Components</h1>
 
     <ol class="steps">
       <li>

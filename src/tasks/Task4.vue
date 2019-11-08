@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h1>Task 4: Renderless Provider Component</h1>
+      <h1 class="text-2xl font-bold mb-4">Task 4: Renderless Provider Component</h1>
       <ol class="steps">
         <li>
           Create a renderless component called FetchData

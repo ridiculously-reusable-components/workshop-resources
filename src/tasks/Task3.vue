@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Task 3: "Composition Over Inheritance"</h1>
+    <h1 class="text-2xl font-bold mb-4">Task 3: "Composition Over Inheritance"</h1>
     <ol class="steps">
       <li>
         Create the NewsEvent component that will handle the "event" type news from the newsFeed.
@@ -173,5 +173,5 @@ export default {
 
 .banner
   margin: 0.5rem -1rem -1.5rem
-  max-width: calc(400px + 2rem)
+  max-width: calc(100% + 2rem)
 </style>

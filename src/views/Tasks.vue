@@ -34,4 +34,5 @@ export default {
 <style lang="sass" scoped>
 .tasks-nav
   margin-top: 4rem
+  margin-left: 4rem
 </style>
