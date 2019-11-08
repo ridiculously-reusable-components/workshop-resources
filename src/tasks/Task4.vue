@@ -16,12 +16,17 @@
           <strong>Advanced</strong>: Create a `useFetchData` composition function to replace the provider component.
         </li>
       </ol>
-      <WithMousePos>
-        <template v-slot="{ x, y }">
-          Mouse position is: {{ x }}, {{ y }}
-        </template>
-      </WithMousePos>
+      <div class="mb-2">
+        <WithMousePos>
+          <template v-slot="{ x, y }">
+            Mouse position from Renderless component: {{ x }}, {{ y }}
+          </template>
+        </WithMousePos>
 
+      </div>
+      <div class="mb-2">
+        Mouse position from Composition-API is: {{ mouseX }}, {{ mouseY }}
+      </div>
       <!-- TASK BEGINS HERE -->
       <input v-model="breed" class="input" type="text">
       <FetchData :url="url">
@@ -70,12 +75,17 @@ import FetchData from '@/components/FetchData'
 // import useFetchData from '@/composables/useFetchData'
 import PulseLoader from 'vue-spinner/src/PulseLoader'
 import WithMousePos from '@/components/MousePos'
+import useMousePos from '@/composables/useMousePos'
 
 export default {
   components: {
     FetchData,
     PulseLoader,
     WithMousePos
+  },
+  setup () {
+    const { x, y } = useMousePos()
+    return { mouseX: x, mouseY: y }
   },
   data () {
     return {
