@@ -1,5 +1,5 @@
 <template>
-  <form class="schema-form">
+  <form class="schema-form" @submit.prevent>
     <component
       v-for="(field, property) in schema"
       :key="property"
@@ -34,7 +34,7 @@ export default {
   methods: {
     update (property, value) {
       this.$emit('input', {
-        ...this.values,
+        ...this.value,
         [property]: value
       })
     }

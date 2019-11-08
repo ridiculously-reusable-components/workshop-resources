@@ -20,7 +20,7 @@
 
 <script>
 import FormMixin from '../Forms/FormMixin'
-import AppSelect from '../AppSelect'
+import AppSelect from './AppSelect'
 
 export default {
   mixins: [ FormMixin ],

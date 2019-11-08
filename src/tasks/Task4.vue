@@ -1,60 +1,62 @@
 <template>
   <div>
-    <MousePos>
-      <template v-slot="{ x, y }">
-        <div>
-          <h1>Task 4: Renderless Provider Component</h1>
-          <ol class="steps">
-            <li>
-              Create a renderless component called FetchData
-            </li>
-            <li>
-              Make it accept a URL props where you can pass a url to be fetched.
-            </li>
-            <li>
-              Depending on the status: pending, error or resolved (data fetched), make it render different slots to match the use case below.
-            </li>
-            <li>
+    <div>
+      <h1>Task 4: Renderless Provider Component</h1>
+      <ol class="steps">
+        <li>
+          Create a renderless component called FetchData
+        </li>
+        <li>
+          Make it accept a URL props where you can pass a url to be fetched.
+        </li>
+        <li>
+          Depending on the status: pending, error or resolved (data fetched), make it render different slots to match the use case below.
+        </li>
+        <li>
+          <WithMousePos>
+            <template v-slot="{ x, y }">
               Mouse position is: {{ x }}, {{ y }}
-            </li>
-          </ol>
+            </template>
+          </WithMousePos>
+        </li>
+      </ol>
 
-          <!-- TASK BEGINS HERE -->
-          <!-- <input v-model="breed" class="input" type="text">
-          <FetchData :url="url">
-            <template #loading>
-              <PulseLoader/>
-            </template>
-            <template #error="{ error, refresh }">
-              <div>
-                {{ error }}
-                <AppButton @click="refresh">Refresh!</AppButton>
-              </div>
-            </template>
-            <template #default="{ data, isPending, error, refresh }">
-              <div>
-                <img :src="data.message" class="result-image">
-                <AppButton @click="refresh">Refresh!</AppButton>
-              </div>
-            </template>
-          </FetchData> -->
-        </div>
-      </template>
+      <!-- TASK BEGINS HERE -->
+      <input v-model="breed" class="input" type="text">
+      <FetchData :url="url">
+        <template #loading>
+          <PulseLoader/>
+        </template>
+
+        <template #error="{ error, refresh }">
+          <div>
+            {{ error }}
+            <AppButton @click="refresh">Refresh!</AppButton>
+          </div>
+        </template>
+
+        <template #default="{ data, isPending, error, refresh }">
+          <div>
+            <img :src="data.message" class="result-image">
+            <AppButton @click="refresh">Refresh!</AppButton>
+          </div>
+        </template>
+      </FetchData>
+    </div>
     <!-- TASK ENDS HERE -->
-    </MousePos>
   </div>
 </template>
 
 <script>
-// import FetchData from '@/components/FetchData'
-// import PulseLoader from 'vue-spinner/src/PulseLoader'
-import MousePos from '@/components/MousePos.js'
+import FetchData from '@/components/FetchData'
+import PulseLoader from 'vue-spinner/src/PulseLoader'
+import WithMousePos from '@/components/MousePos'
 
 export default {
   components: {
-    // FetchData,
-    // PulseLoader,
-    MousePos
+    FetchData,
+    PulseLoader,
+    WithMousePos
   },
   data () {
     return {

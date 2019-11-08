@@ -25,7 +25,7 @@
       :value="userData"
       @input="mergeChanges"
     >
-      <AppButton buttonType="submit">
+      <AppButton buttonType="submit" style="margin-top: 20px">
         Submit
         <AppIcon icon="arrow-right" style="margin-left: 7px;"/>
       </AppButton>
@@ -37,6 +37,7 @@
 
 <script>
 import SchemaForm from '@/components/Forms/SchemaForm'
+import FormSelect from '@/components/Solutions/FormSelect'
 
 const SCHEMA = {
   firstName: {
@@ -59,13 +60,7 @@ const SCHEMA = {
     component: 'FormCheckbox',
     label: 'Are you a Vue fan?'
   },
-  country: {
-    component: 'FormSelect',
-    label: 'Country',
-    config: {
-      options: ['Germany', 'Poland', 'France', 'Czech Republic', 'Iceland']
-    }
-  },
+
 }
 
 export default {
@@ -79,7 +74,18 @@ export default {
   },
   computed: {
     schema () {
-      return SCHEMA
+      return this.userData.isVueFan
+        ? {
+          ...SCHEMA,
+          country: {
+            component: FormSelect,
+            label: 'Country',
+            config: {
+              options: ['Germany', 'Poland', 'France', 'Czech Republic', 'Iceland']
+            }
+          },
+        }
+        : SCHEMA
     }
   },
   methods: {
@@ -89,7 +95,12 @@ export default {
         ...changes
       }
     }
-  }
+  },
+  beforeCreate () {
+    this.$on('hook:mounted', () => {
+      console.log('hi');
+    })
+  },
 }
 </script>
 

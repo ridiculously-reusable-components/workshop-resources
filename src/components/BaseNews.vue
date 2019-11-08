@@ -1,16 +1,5 @@
 <template>
   <div class="card">
-    <slot name="author">
-      <small>{{ news.author }}</small>
-    </slot>
-    <h3 class="title">
-      <slot name="title">
-        {{ news.title }}
-      </slot>
-    </h3>
-    <small>{{ news.date }}</small>
-
-    <slot/>
   </div>
 </template>
 
@@ -40,3 +29,15 @@ export default {
 .title
   margin: 0
 </style>
+
+<!-- <slot name="author">
+  <small>{{ news.author }}</small>
+</slot>
+<h3 class="title">
+  <slot name="title">
+    {{ news.title }}
+  </slot>
+</h3>
+<small>{{ news.date }}</small>
+
+<slot/> -->

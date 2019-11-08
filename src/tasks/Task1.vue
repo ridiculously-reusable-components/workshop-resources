@@ -15,11 +15,16 @@
     </ol>
 
     <!-- TASK BEGINS HERE -->
-    <AppSelect :value="value" @input="value = $event" :options="options">
+    <AppSelect
+      :value="value"
+      :options="options"
+      @input="value = $event"
+    >
       <template #selected>
         {{ value.name || 'Select option' }}
         <AppIcon icon="chevron-down" style="margin-left: 10px;"/>
       </template>
+
       <template #option="{ option }">
         <div class="option">
           {{ option.name }}
@@ -35,11 +40,16 @@
 </template>
 
 <script>
-import AppDropdown from '@/components/AppDropdown'
+import AppSelect from '@/components/AppSelect'
+// import AppDropdown from '@/components/AppDropdown'
+// import AppTooltip from '@/components/AppTooltip'
+
 
 export default {
   components: {
-    AppSelect
+    AppSelect,
+    // AppDropdown,
+    // AppTooltip
   },
   data () {
     return {

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import CompositionApi from '@vue/composition-api'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -9,11 +10,13 @@ import AppButton from '@/components/AppButton'
 import AppModal from '@/components/AppModal'
 import PulseLoader from '@/components/PulseLoader'
 
+Vue.use(CompositionApi)
+
 library.add(fas)
 
 Vue.component('AppIcon', FontAwesomeIcon)
 Vue.component('AppButton', AppButton)
-Vue.component(AppModal)
+Vue.component('AppModal', AppModal)
 Vue.component('PulseLoader', PulseLoader)
 
 Vue.config.productionTip = false

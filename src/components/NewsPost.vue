@@ -1,5 +1,8 @@
 <template>
-  <BaseNews v-bind="propsAndAttrs">
+  <BaseNews
+    v-bind="{ ...$attrs, ...$props }"
+    v-on="$listeners"
+  >
     <blockquote class="quote">
       {{ news.content }}
     </blockquote>

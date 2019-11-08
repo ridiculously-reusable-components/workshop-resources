@@ -6,10 +6,6 @@ export default {
       type: String,
       required: true
     },
-    params: {
-      type: Object,
-      default: () => {}
-    },
     delay: {
       type: Number,
       default: 200
@@ -33,7 +29,7 @@ export default {
   methods: {
     fetch () {
       this.resolved = false
-      axios.get(this.url, this.params)
+      axios.get(this.url)
         .then(response => {
           this.error = null
           this.data = response.data

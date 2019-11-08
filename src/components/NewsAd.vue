@@ -2,8 +2,9 @@
   <BaseNews v-bind="$props">
     <template #author>
       <span class="sponsored">SPONSORED</span>
-      {{ news.author }}
+      by {{ news.author }}
     </template>
+
     <img class="banner" :src="news.image"/>
   </BaseNews>
 </template>

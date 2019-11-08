@@ -1,17 +1,5 @@
 <template>
   <span class="tooltip">
-    <slot name="trigger" v-bind="{ isOpen, setIsOpen }">
-      <span
-        class="tooltip-trigger"
-        @mouseenter="setIsOpen(true)"
-        @mouseleave="setIsOpen(false)"
-      >
-        <slot/>
-      </span>
-    </slot>
-    <div v-if="isOpen" class="tooltip-content">
-      <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
-    </div>
   </span>
 </template>
 
@@ -51,3 +39,16 @@ export default {
   bottom: -5px
   transform: translateY(100%)
 </style>
+
+<!-- <slot name="trigger" v-bind="{ isOpen, setIsOpen }">
+  <span
+    class="tooltip-trigger"
+    @mouseenter="setIsOpen(true)"
+    @mouseleave="setIsOpen(false)"
+  >
+    <slot/>
+  </span>
+</slot>
+<div v-if="isOpen" class="tooltip-content">
+  <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
+</div> -->
