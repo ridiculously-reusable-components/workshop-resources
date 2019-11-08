@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "dev": "vue-cli-service serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.14",
@@ -30,6 +30,7 @@
     "lint-staged": "^8.1.4",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "vue-cli-plugin-tailwind": "^1.1.0",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
@@ -46,6 +47,8 @@
   },
   "postcss": {
     "plugins": {
+      "tailwindcss": {},
+      "vue-cli-plugin-tailwind/purgecss": {},
       "autoprefixer": {}
     }
   },

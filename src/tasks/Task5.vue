@@ -17,6 +17,9 @@
       <li>
         <strong>Advanced</strong>: If the user checks the <strong>isVueFan</strong> checkbox, extend the schema with an additional text input that asks for feedback.
       </li>
+      <li>
+        <strong>Advanced</strong>: Create a Higher-Order Component called <strong>WithDescription</strong> that adds a description field on the side of the input. Replace the Schema Form Components with a modified version of them (with description).
+      </li>
     </ol>
 
     <!-- TASK BEGINS HERE -->
@@ -32,40 +35,54 @@
     </SchemaForm>
 
     <!-- TASK ENDS HERE -->
+
+    <FunctionalComponentWithJSX message=" this is a message from props" class="mb-8"/>
   </div>
 </template>
 
 <script>
 import SchemaForm from '@/components/Forms/SchemaForm'
 import FormSelect from '@/components/Solutions/FormSelect'
+import FormText from '@/components/Forms/FormText'
+import FormCheckbox from '@/components/Forms/FormCheckbox'
+// import WithDescription from '@/components/WithDescription'
+
+const FunctionalComponentWithJSX = ({ props }) => <div class="mt-8">
+  Hello, I’m a functional Component and
+  <strong>{ props.message }</strong>
+</div>
 
 const SCHEMA = {
   firstName: {
-    component: 'FormText',
+    component: FormText,
     label: 'First Name',
+    description: 'Only provide one name.'
   },
   lastName: {
-    component: 'FormText',
+    component: FormText,
     label: 'Last Name',
+    description: 'Only use latin letters'
   },
   email: {
-    component: 'FormText',
+    component: FormText,
     label: 'Your email',
     required: true,
     config: {
       type: 'email'
-    }
+    },
+    description: 'This field is required'
   },
   isVueFan: {
-    component: 'FormCheckbox',
-    label: 'Are you a Vue fan?'
+    component: FormCheckbox,
+    label: 'Are you a Vue fan?',
+    description: 'But really, are you?'
   },
-
 }
 
 export default {
   components: {
-    SchemaForm
+    SchemaForm,
+    FunctionalComponentWithJSX
   },
   data () {
     return {
@@ -81,7 +98,7 @@ export default {
             component: FormSelect,
             label: 'Country',
             config: {
-              options: ['Germany', 'Poland', 'France', 'Czech Republic', 'Iceland']
+              options: ['Canada', 'Poland', 'United States', 'Czech Republic', 'Germany']
             }
           },
         }

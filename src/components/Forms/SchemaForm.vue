@@ -13,14 +13,7 @@
 </template>
 
 <script>
-import FormCheckbox from './FormCheckbox'
-import FormText from './FormText'
-
 export default {
-  components: {
-    FormCheckbox,
-    FormText
-  },
   props: {
     schema: {
       type: Object,
@@ -44,7 +37,7 @@ export default {
 
 <style lang="sass">
 .schema-form
-  width: 250px
+  max-width: 600px
   margin: 0 auto
   text-align: left
 

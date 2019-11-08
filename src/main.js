@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import AppButton from '@/components/AppButton'
 import AppModal from '@/components/AppModal'
 import PulseLoader from '@/components/PulseLoader'
+import './assets/tailwind.css'
 
 Vue.use(CompositionApi)
 
