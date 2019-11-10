@@ -19,11 +19,6 @@ export default {
       type: Object,
       required: true
     }
-  },
-  computed: {
-    propsAndAttrs () {
-      return { ...this.$attrs, ...this.$props }
-    }
   }
 }
 </script>

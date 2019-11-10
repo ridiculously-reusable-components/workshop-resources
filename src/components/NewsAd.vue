@@ -39,5 +39,5 @@ export default {
 
 .banner
   margin: 0.5rem -1rem -1.5rem
-  max-width: calc(400px + 2rem)
+  max-width: calc(100% + 2rem)
 </style>

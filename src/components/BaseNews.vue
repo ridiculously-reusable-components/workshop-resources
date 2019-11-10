@@ -1,5 +1,13 @@
 <template>
   <div class="card">
+    <slot name="author">
+      <small>{{ news.author }}</small>
+    </slot>
+
+    <h3 class="title">{{ news.title }}</h3>
+    <small>{{ news.date }}</small>
+
+    <slot/>
   </div>
 </template>
 
