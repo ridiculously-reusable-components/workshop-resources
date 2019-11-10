@@ -1,10 +1,8 @@
-import { reactive, toRefs, onMounted, onUnmounted } from '@vue/composition-api'
+import { ref, onMounted, onUnmounted } from '@vue/composition-api'
 
 export default function () {
-  const mousePos = reactive({
-    x: 0,
-    y: 0
-  })
+  const x = ref(0)
+  const y = ref(0)
 
   onMounted(() => {
     window.addEventListener('mousemove', handleMouseMove)
@@ -15,9 +13,9 @@ export default function () {
   })
 
   const handleMouseMove = (e) => {
-    mousePos.x = e.x
-    mousePos.y = e.y
+    x.value = e.x
+    y.value = e.y
   }
 
-  return toRefs(mousePos)
+  return { x, y }
 }

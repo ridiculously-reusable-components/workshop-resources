@@ -5,3 +5,13 @@ export default function (Comp) {
 
   return CompWithDesc
 }
+
+
+function WithMessage (Component) {
+  const ModifiedComponent = ({ props }) => <div>
+    <Component { ...props } />
+    With added message { props.message }
+  </div>
+
+  return ModifiedComponent
+}

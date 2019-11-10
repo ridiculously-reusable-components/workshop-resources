@@ -91,7 +91,18 @@ export default {
   },
   computed: {
     schema () {
-      return SCHEMA
+      return this.userData.isVueFan
+        ? {
+          ...SCHEMA,
+          country: {
+            component: FormSelect,
+            label: 'Country',
+            config: {
+              options: ['Canada', 'Poland', 'United States', 'Czech Republic', 'Germany']
+            }
+          },
+        }
+        : SCHEMA
     }
   },
   methods: {
