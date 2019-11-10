@@ -1,5 +1,17 @@
 <template>
   <span class="tooltip">
+    <slot name="trigger" v-bind="{ isOpen, setIsOpen }">
+      <span
+        @mouseenter="setIsOpen(true)"
+        @mouseleave="setIsOpen(false)"
+        class="tooltip-trigger"
+      >
+        <slot/>
+      </span>
+    </slot>
+    <div v-if="isOpen" class="tooltip-content">
+      <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
+    </div>
   </span>
 </template>
 

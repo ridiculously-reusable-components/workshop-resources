@@ -1,19 +1,28 @@
 <template>
   <AppTooltip>
-
+    <template #trigger="{ isOpen, setIsOpen }">
+      <AppButton @click="setIsOpen(!isOpen)">
+        <slot/>
+      </AppButton>
+      <GlobalEvents
+        v-if="isOpen" @click="handleOutsideClick($event, setIsOpen)"/>
+    </template>
+    <template #content="{ isOpen, setIsOpen }">
+      <slot name="content" v-bind="{ isOpen, setIsOpen }"/>
+    </template>
   </AppTooltip>
 </template>
 
 <script>
-// import AppButton from './AppButton'
+import AppButton from './AppButton'
 import AppTooltip from './AppTooltip'
-// import GlobalEvents from 'vue-global-events'
+import GlobalEvents from 'vue-global-events'
 
 export default {
   components: {
     AppTooltip,
-    // AppButton,
-    // GlobalEvents
+    AppButton,
+    GlobalEvents
   },
   methods: {
     handleOutsideClick (e, cb) {
